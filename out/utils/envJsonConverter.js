@@ -77,7 +77,13 @@ function jsonToEnv(jsonContent) {
     const lines = [];
     for (const [key, value] of Object.entries(flat)) {
         const needsQuotes = value.includes(' ') || value.includes('\n') || value.includes('#');
-        const formattedValue = needsQuotes ? `"${value.replace(/"/g, '\\"')}"` : value;
+        let formattedValue = value
+            .replace(/\\/g, '\\\\')
+            .replace(/"/g, '\\"')
+            .replace(/\n/g, '\\n');
+        if (needsQuotes) {
+            formattedValue = `"${formattedValue}"`;
+        }
         lines.push(`${key}=${formattedValue}`);
     }
     return lines.join('\n');
