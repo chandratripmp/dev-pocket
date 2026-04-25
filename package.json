@@ -1,0 +1,71 @@
+{
+  "name": "dev-pocket",
+  "displayName": "DevPocket",
+  "description": "Quick dev tools for the stuff you Google way too often. JSON minifier, epoch converter, base64 encoder - all the little utilities that make you think \"there's gotta be a faster way to do this.\" Now there is! 🚀",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "dev-pocket.helloWorld",
+        "title": "DevPocket: Hello World"
+      },
+      {
+        "command": "dev-pocket.envJsonConvert",
+        "title": "DevPocket: Convert env/json"
+      },
+      {
+        "command": "dev-pocket.base64Encode",
+        "title": "DevPocket: Base64 Encode"
+      },
+      {
+        "command": "dev-pocket.base64Decode",
+        "title": "DevPocket: Base64 Decode"
+      },
+      {
+        "command": "dev-pocket.jsonMinify",
+        "title": "DevPocket: JSON Minify"
+      },
+      {
+        "command": "dev-pocket.unixConvert",
+        "title": "DevPocket: Unix Timestamp Convert"
+      }
+    ],
+    "configuration": {
+      "title": "DevPocket",
+      "properties": {
+        "dev-pocket.unixHoverEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable hover provider for unix timestamps"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.104.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "eslint": "^9.32.0",
+    "typescript": "^5.9.2",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
