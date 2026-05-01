@@ -5,6 +5,9 @@ export interface ConversionResult {
 }
 
 export function formatTimestamp(unix: number): ConversionResult {
+  if (!isValidUnixTimestamp(unix.toString())) {
+    throw new Error('Invalid timestamp');
+  }
   const isMilliseconds = unix > 9999999999;
   const ms = isMilliseconds ? unix : unix * 1000;
   const date = new Date(ms);

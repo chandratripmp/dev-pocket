@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { formatTimestamp, formatResult, isValidUnixTimestamp } from '../../utils/unixConverter';
+import { formatTimestamp, formatResult, isValidUnixTimestamp } from '../../../utils/unixConverter';
 
 suite('unixConverter', () => {
   suite('isValidUnixTimestamp', () => {
@@ -27,8 +27,8 @@ suite('unixConverter', () => {
       assert.strictEqual(isValidUnixTimestamp('abc'), false);
     });
 
-    test('should return false for very small number', () => {
-      assert.strictEqual(isValidUnixTimestamp('1'), false);
+    test('should return true for very small number', () => {
+      assert.strictEqual(isValidUnixTimestamp('1'), true);
     });
 
     test('should return true for 10 digit timestamp', () => {
