@@ -1,74 +1,34 @@
-# dev-pocket
-Quick dev tools for the stuff you Google way too often. JSON minifier, epoch converter, base64 encoder - all the little utilities that make you think "there's gotta be a faster way to do this." Now there is! 🚀
+# DevPocket
 
-# devpocket README
-
-This is the README for your extension "dev-pocket". After writing up a brief description, we recommend including the following sections.
+Quick dev tools for the stuff you Google way too often — right inside VS Code. JSON minifier, epoch converter, base64 encoder, and more. All the little utilities that make you think "there's gotta be a faster way to do this."
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- **Convert ENV / JSON** — Convert between `.env` and JSON format. Select text to convert a portion, or run on the whole file.
+- **Base64 Encode** — Encode selected text (or full file) to Base64. The encoded result is appended below the original content.
+- **Base64 Decode** — Decode Base64 text back to its original form.
+- **JSON Minify** — Minify pretty-printed or multi-object JSON into compact form. Handles both single objects/arrays and multiple concatenated JSON objects.
+- **Unix Timestamp Convert** — Scan text for all 10- and 13-digit unix timestamps and display them converted to human-readable dates in a side-by-side view.
+- **Unix Hover Provider** — Hover over any unix timestamp in the editor to see its converted date/time.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+No additional dependencies or runtime requirements.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+| Setting | Type | Default | Description |
+|---|---|---|---|
+| `dev-pocket.unixHoverEnabled` | `boolean` | `true` | Enable hover provider for unix timestamps |
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+None at this time. If you find a bug, please [open an issue](https://github.com/chandratripmp/dev-pocket/issues).
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release with ENV/JSON conversion, Base64 encode/decode, JSON minify, and Unix timestamp tools.

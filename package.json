@@ -3,6 +3,8 @@
   "displayName": "DevPocket",
   "description": "Quick dev tools for the stuff you Google way too often. JSON minifier, epoch converter, base64 encoder - all the little utilities that make you think \"there's gotta be a faster way to do this.\" Now there is! 🚀",
   "version": "0.0.1",
+  "publisher": "chandratripmp",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.104.0"
   },
@@ -12,6 +14,10 @@
   "activationEvents": [
     "onStartupFinished"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chandratripmp/dev-pocket"
+  },
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
