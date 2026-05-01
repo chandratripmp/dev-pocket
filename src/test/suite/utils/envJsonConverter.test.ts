@@ -111,8 +111,9 @@ suite('envJsonConverter', () => {
     });
 
     test('should quote values with newlines', () => {
-      const result = jsonToEnv('{"KEY": "value\nwith\nnewlines"}');
-      assert.strictEqual(result, 'KEY="value\nwith\nnewlines"');
+      const result = jsonToEnv('{"KEY": "value\\nwith\\nnewlines"}');
+      console.log("result", result);
+      assert.strictEqual(result, 'KEY="value\\nwith\\nnewlines"');
     });
 
     test('should quote values with #', () => {
@@ -121,8 +122,8 @@ suite('envJsonConverter', () => {
     });
 
     test('should escape double quotes in values', () => {
-      const result = jsonToEnv('{"KEY": "value\"quote"}');
-      assert.strictEqual(result, 'KEY="value\"quote"');
+      const result = jsonToEnv('{"KEY": "value\\"quote"}');
+      assert.strictEqual(result, 'KEY="value\\"quote"');
     });
   });
 

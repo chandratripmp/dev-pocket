@@ -78,6 +78,8 @@ export function flattenObject(obj: Record<string, unknown>, prefix = ''): Record
 
 export function jsonToEnv(jsonContent: string): string {
   const parsed = JSON.parse(jsonContent);
+  console.log('jsonContent', jsonContent);
+  console.log('parsed', parsed);
 
   if (typeof parsed !== 'object' || parsed === null) {
     throw new Error('Input must be a JSON object');
@@ -87,11 +89,12 @@ export function jsonToEnv(jsonContent: string): string {
   const lines: string[] = [];
 
   for (const [key, value] of Object.entries(flat)) {
-    const needsQuotes = value.includes(' ') || value.includes('\n') || value.includes('#');
+    const needsQuotes = value.includes(' ') || value.includes('\n') || value.includes('\"') || value.includes('#');
     let formattedValue = value
       .replace(/\\/g, '\\\\')
       .replace(/"/g, '\\"')
       .replace(/\n/g, '\\n');
+      // .replace(/\"/g, '\\"');
     if (needsQuotes) {
       formattedValue = `"${formattedValue}"`;
     }
