@@ -31,8 +31,18 @@ suite('DevPocket Commands Integration', () => {
     assert.ok(command.includes('dev-pocket.unixConvert'));
   });
 
-  test('should register dev-pocket.helloWorld command', async () => {
+  test('should register dev-pocket.urlEncode command', async () => {
     const command = await vscode.commands.getCommands(true);
-    assert.ok(command.includes('dev-pocket.helloWorld'));
+    assert.ok(command.includes('dev-pocket.urlEncode'));
+  });
+
+  test('should register dev-pocket.urlDecode command', async () => {
+    const command = await vscode.commands.getCommands(true);
+    assert.ok(command.includes('dev-pocket.urlDecode'));
+  });
+
+  test('should register dev-pocket.sqlWhereInQuotes command', async () => {
+    const command = await vscode.commands.getCommands(true);
+    assert.ok(command.includes('dev-pocket.sqlWhereInQuotes'));
   });
 });
