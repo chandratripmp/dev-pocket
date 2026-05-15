@@ -2,7 +2,7 @@
   "name": "dev-pocket",
   "displayName": "DevPocket",
   "description": "Quick dev tools for the stuff you Google way too often. JSON minifier, epoch converter, base64 encoder - all the little utilities that make you think \"there's gotta be a faster way to do this.\" Now there is! 🚀",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "chandratripmp",
   "license": "MIT",
   "icon": "icon.png",
