@@ -12,6 +12,7 @@ Quick dev tools for the stuff you Google way too often — right inside VS Code.
 - **Unix Hover Provider** — Hover over any unix timestamp in the editor to see its converted date/time.
 - **URL Encode** — Encode selected text (or full file) to URL-encoded format (e.g., spaces become `%20`).
 - **URL Decode** — Decode URL-encoded text back to its original form.
+- **SQL WHERE IN Quotes** — Wrap each selected line in single quotes with commas, enclosed in parentheses. Perfect for building SQL `WHERE IN` clauses from a list of values.
 
 ## Usage
 
@@ -73,6 +74,24 @@ Hover over any unix timestamp to see its converted value inline.
 1. Select URL-encoded text (e.g., `hello%20world`).
 2. Run `DevPocket: URL Decode`.
 3. The text is replaced with its decoded form (e.g., `hello world`).
+
+### SQL WHERE IN Quotes
+
+1. Select a list of values, one per line:
+   ```
+   a1
+   b2
+   c3
+   ```
+2. Run `DevPocket: Surround with quotes for SQL WHERE IN`.
+3. Each line is wrapped in single quotes with commas, with opening/closing parentheses added:
+   ```sql
+   (
+   	'a1',
+   	'b2',
+   	'c3'
+   )
+   ```
 
 ## Requirements
 
