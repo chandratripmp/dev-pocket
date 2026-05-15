@@ -2,9 +2,10 @@
   "name": "dev-pocket",
   "displayName": "DevPocket",
   "description": "Quick dev tools for the stuff you Google way too often. JSON minifier, epoch converter, base64 encoder - all the little utilities that make you think \"there's gotta be a faster way to do this.\" Now there is! 🚀",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "chandratripmp",
   "license": "MIT",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.104.0"
   },
@@ -44,6 +45,66 @@
       {
         "command": "dev-pocket.unixConvert",
         "title": "DevPocket: Unix Timestamp Convert"
+      },
+      {
+        "command": "dev-pocket.urlEncode",
+        "title": "DevPocket: URL Encode"
+      },
+      {
+        "command": "dev-pocket.urlDecode",
+        "title": "DevPocket: URL Decode"
+      },
+      {
+        "command": "dev-pocket.sqlWhereInQuotes",
+        "title": "DevPocket: Surround with quotes for SQL WHERE IN"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "dev-pocket",
+          "group": "dev-pocket"
+        }
+      ],
+      "dev-pocket": [
+        {
+          "command": "dev-pocket.envJsonConvert",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "dev-pocket.base64Encode",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "dev-pocket.base64Decode",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "dev-pocket.jsonMinify",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "dev-pocket.unixConvert",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "dev-pocket.urlEncode",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "dev-pocket.urlDecode",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "dev-pocket.sqlWhereInQuotes",
+          "when": "editorHasSelection"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "dev-pocket",
+        "label": "DevPocket"
       }
     ],
     "configuration": {
