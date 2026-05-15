@@ -108,9 +108,3 @@ This extension contributes the following settings:
 ## Known Issues
 
 None at this time. If you find a bug, please [open an issue](https://github.com/chandratripmp/dev-pocket/issues).
-
-## Release Notes
-
-### 0.0.1
-
-Initial release with ENV/JSON conversion, Base64 encode/decode, JSON minify, and Unix timestamp tools.
